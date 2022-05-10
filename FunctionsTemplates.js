@@ -14,6 +14,25 @@ console.log(`El meu nom és ${inputName} i el meu cognom ${inputUserName}`);
 
 // Nivell 2, Exercici 2
 
-console.log(`${getName("Maria")}`);
+function add(a, b) {
+  return a + b;
+}
+console.log(`El valor de la suma de dos números és ${add(4, 5)}`);
 
 // Nivell 3, Exercici 1
+
+let matrix = new Array(10);
+for (let counter = 0; counter < 10; counter++) {
+  matrix[counter] = countingToNine();
+}
+
+function countingToNine() {
+  for (let counter = 0; counter < 10; counter++) {
+    console.log(counter);
+  }
+}
+
+// Nivell 3, Exercici 2
+
+let message = (inputName) => `My name is ${inputName}`;
+console.log(message("Mary"));
