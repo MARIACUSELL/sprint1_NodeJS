@@ -1,2 +1,2 @@
 # sprint1_NodeJS
-Primera entrega curs NodeJS
+Repositori Sprint1 curs NodeJS
