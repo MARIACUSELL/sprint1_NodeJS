@@ -23,8 +23,10 @@ console.log(`El valor de la suma de dos números és ${add(4, 5)}`);
 
 let matrix = new Array(10);
 for (let counter = 0; counter < 10; counter++) {
-  matrix[counter] = countingToNine();
+  matrix.push(countingToNine());
+  countingToNine();
 }
+console.log(matrix);
 
 function countingToNine() {
   for (let counter = 0; counter < 10; counter++) {
