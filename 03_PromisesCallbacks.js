@@ -100,7 +100,7 @@ getSalary(employees[1]).then((value) =>
 
 getEmployee(3).then((value1) =>
   getSalary(value1).then((value2) =>
-    console.log(`Employee: ${value1.name} have this salary: ${value2.salary}`)
+    console.log(`Employee: ${value1.name} has this salary: ${value2.salary}`)
   )
 );
 
