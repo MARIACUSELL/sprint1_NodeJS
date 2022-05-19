@@ -38,9 +38,7 @@ const getEmployee = (employeeId) => {
   return new Promise((resolve, reject) => {
     let foundEmployee = employees.find((ele) => ele.id == employeeId);
 
-    foundEmployee
-      ? resolve(foundEmployee)
-      : reject(new Error("Id not correct"));
+    foundEmployee ? resolve(foundEmployee) : reject(new Error("Id incorrecto"));
   });
 };
 
@@ -48,7 +46,7 @@ const getSalary = (employee) => {
   return new Promise((resolve, reject) => {
     let amount = salaries.find((ele) => ele.id == employee.id);
 
-    amount ? resolve(amount) : reject(new Error("There is a problem"));
+    amount ? resolve(amount) : reject(new Error("Id incorrecto"));
   });
 };
 
@@ -60,7 +58,7 @@ async function resultEmployee(employeeId) {
       `${elementEmployees.name} has a salary of ${elementSalarys.salary}`
     );
   } catch (error) {
-    console.log("Error");
+    console.log("Id incorrecto");
   }
 }
 resultEmployee(2);
@@ -71,7 +69,7 @@ resultEmployee(2);
 // després de 2 segons de la seva invocació.
 
 function resolveTwoSecondsLatter() {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve("Action resolved in 2 seconds");
     }, 2000);
@@ -79,13 +77,10 @@ function resolveTwoSecondsLatter() {
 }
 
 async function callWithDelay() {
-  try {
-    const result = await resolveTwoSecondsLatter();
-    console.log(result);
-  } catch (error) {
-    console.log("Action is not done well");
-  }
+  const result = await resolveTwoSecondsLatter();
+  console.log(result);
 }
+
 callWithDelay();
 
 //NIVELL 2
@@ -94,10 +89,11 @@ callWithDelay();
 //Crea una altra funció que rebi tres números i calculi la suma dels seus dobles usant la funció anterior.
 
 const getTheDoble = (x) => {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(x * 2);
     }, 2000);
+    reject(new Error("Error: this is not a number"));
   });
 };
 
@@ -113,7 +109,7 @@ async function operate(num1, num2, num3) {
       `La suma del doble dels números ${num1}, ${num2}, ${num3} és ${totaladd}`
     );
   } catch (error) {
-    console.log(`Error: this is not a number`);
+    console.log(`Error, we need a number`);
   }
 }
 operate(2, 2, 2);
@@ -121,9 +117,9 @@ operate(2, 2, 2);
 //NIVELL 3
 //Exercici 1
 //Força i captura tants errors com puguis dels nivells 1 i 2.
-
-/*
+/* 
 resultEmployee(11);
 callWithDelay();
 getTheDoble("y");
-operate("z", "z", "z");*/
+operate("z", "z", "z");
+ */
