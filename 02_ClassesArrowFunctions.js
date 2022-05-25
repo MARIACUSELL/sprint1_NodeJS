@@ -47,7 +47,7 @@ console.log(person.name);
 person.sayName();
 
 // Nivell 3, Exercici 1
-
+// AIXÒ NO ESTA BE
 function Person() {}
 Person.prototype.name = "Claudia Mayne";
 let person1 = new Person();

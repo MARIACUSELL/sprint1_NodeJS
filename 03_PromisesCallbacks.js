@@ -1,19 +1,22 @@
 // Nivell 1, Exercici 1
-const hasMeeting = false;
-const meeting = new Promise((resolve, reject) => {
-  if (!hasMeeting) {
-    const meetingDetails = {
-      name: "Meeting",
-      location: "Skype",
-      time: "2:00 PM",
-    };
-    resolve(meetingDetails);
-  } else {
-    reject(new Error("Meeting alredy scheduled"));
-  }
-});
-// Llamamos la promise
-meeting
+function getAPromise() {
+  const hasMeeting = false;
+  const meeting = new Promise((resolve, reject) => {
+    if (!hasMeeting) {
+      const meetingDetails = {
+        name: "Meeting",
+        time: "2:00 PM",
+      };
+      resolve(meetingDetails);
+    } else {
+      reject(new Error("Meeting alredy scheduled"));
+    }
+  });
+  return meeting;
+}
+
+// Call the Promise
+getAPromise()
   .then((res) => {
     //resolve data
     console.log("Meeting scheduled");
@@ -25,7 +28,14 @@ meeting
   });
 
 // Nivell 1, Exercici 2
+//ARREGLAR
+const showMessage = (message) => console.log(message);
 
+const myFunction = (parameter, callback) => callback(parameter);
+
+myFunction("Dog", showMessage);
+
+////
 let message = (name) => console.log(`Congrats ${name}`);
 const userInfo = (firstName, lastName, callback) => {
   const fullName = `${firstName} ${lastName}`;

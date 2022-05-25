@@ -1,4 +1,4 @@
-//EXEMPLES CALLBACKS I SETTIMEOUTS
+/* //EXEMPLES CALLBACKS I SETTIMEOUTS
 
 function sum(a, b) {
   console.log(a + b);
@@ -57,4 +57,14 @@ async function add1(x) {
 
 add1(10).then((valor) => {
   console.log(valor);
-});
+}); */
+
+const arrayFunctions = [];
+
+const countNumber = () => {
+  for (let i = 0; i < 10; i++) console.log(i);
+};
+
+for (let i = 0; i < 10; i++) arrayFunctions.push(countNumber);
+
+for (let funct of arrayFunctions) funct();
