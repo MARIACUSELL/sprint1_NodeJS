@@ -1,0 +1,17 @@
+{
+  "name": "06_project_testing",
+  "version": "1.0.0",
+  "description": "Incluye archivos para testear y los archivos con el testing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "Jest"
+  },
+  "keywords": [
+    "testing"
+  ],
+  "author": "Maria Cusell",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.0"
+  }
+}
